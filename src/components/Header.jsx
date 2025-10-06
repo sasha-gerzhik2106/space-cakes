@@ -1,10 +1,13 @@
 import './../styles-css/header.css'
+import spImage from './../images/sp.jpg'
+
+
 export default function Header(){
 return(
-    <header>
-        <div className="header">
+    <header className='header'>
+        <div className="header-container">
             <button className="logo-btn">
-                 <img src="../public/images/sp.jpg" alt="sp img" />
+                 <img src={spImage} alt="sp img" />
             </button>
             <h1 className="brand-title">
                 Space-cakes
