@@ -1,0 +1,20 @@
+/* Сброс отступов для всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Сброс отступов body и html */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Для App компонента */
+.App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

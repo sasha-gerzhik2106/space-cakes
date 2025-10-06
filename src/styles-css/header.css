@@ -1,0 +1,44 @@
+.header {
+  background: #9673d6;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.logo-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.brand-title {
+ color: white;
+  font-size: 1.8rem;
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* ← добавь это */
+  font-weight: bold;
+}
+
+.border-menu{
+    background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s; 
+}
