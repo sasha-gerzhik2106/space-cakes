@@ -1,21 +1,22 @@
 import './../styles-css/header.css'
-import spImage from './../images/sp.jpg'
+
 
 
 export default function Header(){
 return(
     <header className='header'>
         <div className="header-container">
-            <button className="logo-btn">
-                 <img src={spImage} alt="sp img" />
-            </button>
-            <h1 className="brand-title">
-                Space-cakes
-            </h1>
-            <button className='border-menu'>
+           <a href="logo" className='brand-title'>Space Cakes</a>
+                <ul className='nav-menu'>
+                    <li className='nav-li'>Каталог</li>
+                    <li className='nav-li'>Контакти</li>
+                    <li className='nav-li'>Інгрідієнти</li>
+                </ul>
+            <button className='border-menu' id='border-button'>
                 🍰
             </button>
         </div>
     </header>
 )
 }
+
