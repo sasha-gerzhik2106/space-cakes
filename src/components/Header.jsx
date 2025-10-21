@@ -2,9 +2,9 @@ import './../styles-css/header.css'
 import Button from './Button'
 import MenuButton from './Bmenu/MenuButton'
 import { menuItems } from './Bmenu/menu-items'
-
+import { useState } from 'react'
 export default function Header(){
-   
+   const [menuOpen, setMenuOpen] = useState(false)
 return(
     <header className='header'>
         <div className="header-container">
@@ -15,9 +15,9 @@ return(
                     <li className='nav-li'>Інгрідієнти</li>
                 </ul>
              
-             <Button className='border-menu' id='border-button'> 🍰
-                </Button>
-                {menuItems && <MenuButton/>}
+             <MenuButton className='border-menu' id='border-button'> 🍰
+                </MenuButton>
+                  
         </div>
     </header>
 )

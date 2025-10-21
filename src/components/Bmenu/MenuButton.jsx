@@ -1,9 +1,28 @@
 import './MenuButton.css'
 import { menuItems } from "./menu-items"
-
-export default function MenuButton(){
+import {useState} from 'react'
+import { createPortal } from 'react-dom'
+export default function MenuButton({onClick, className, children}){
+         const [menuOpen, setMenuOpen] = useState(false)
+    function handleClick(){
+        setMenuOpen(true) 
+        
+        
+        
+    }
+    function onClose(event){
+        if (event.target === event.currentTarget) {
+         setMenuOpen(false)   
+        }
+    }
     return(
-        <div className="menu-overlay">
+        <>
+        <button onClick = {handleClick}
+        className={className}
+        >
+        {children}
+        </button>
+        {menuOpen && createPortal(<div className="menu-overlay" onClick={onClose}>
             <ul className="menu-list">
                 {
                  menuItems.map((item) => (
@@ -11,9 +30,10 @@ export default function MenuButton(){
                  ))
                  }
              </ul>
-        </div>
-         
+        </div>,document.body)}
+        </>
         
-       
+        
     )
+
 }
