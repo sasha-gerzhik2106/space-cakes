@@ -1,0 +1,32 @@
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  list-style: none;
+  min-width: 200px;
+  text-align: center;
+}
+
+.menu-list li {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-list li:hover {
+  color: #ff6f61;
+}
