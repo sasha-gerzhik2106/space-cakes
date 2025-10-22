@@ -22,7 +22,10 @@ export default function MenuButton({onClick, className, children}){
         >
         {children}
         </button>
-        {menuOpen && createPortal(<div className="menu-overlay" onClick={onClose}>
+        {menuOpen && createPortal(<div className='close-menu' onClick={onClose}>
+            <div className="menu-overlay">
+            <button className='border-close' id='border-button'
+            onClick={onClose}>🍰</button>
             <ul className="menu-list">
                 {
                  menuItems.map((item) => (
@@ -30,7 +33,8 @@ export default function MenuButton({onClick, className, children}){
                  ))
                  }
              </ul>
-        </div>,document.body)}
+        </div>
+            </div>,document.body)}
         </>
         
         

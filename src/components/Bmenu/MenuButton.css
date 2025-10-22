@@ -10,21 +10,51 @@
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 1000;
-  padding: 20px;
    transition: right 0.8s ease;
 }
 .menu-overlay.active {
   right: 0;
 }
+ 
+.border-close{
+ background: none;
+  border: 2px solid var(--color-purple);
+  cursor: pointer;
+  padding: 0.7rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+  color: white;
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-menu{
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* затемнение */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 
 .menu-list {
  list-style: none;
   padding: 0;
-  margin: 0;
-  text-align: left; /* текст прижат влево */
-  width: 100%; /* занимает всю ширину контейнера */
+  margin: 0.5rem;
+  margin-top: 3rem;
+ 
+  width: 100%;
   font-family: 'Great Vibes', cursive;
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: normal;
 }
 
