@@ -1,5 +1,5 @@
 export const menuItems = [
     {title: 'Каталог'},
-    { title: 'Контакти'},
-    {title:'Інгрідієнти'}
+    { title: 'Інгрідієнти'},
+    {title:'Контакти'}
 ]
