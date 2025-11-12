@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero/Hero";
 import CakeList from "./components/CakeList/CakeList";
 // import Catalog from './components/Catalog'
-// import Footer from './components/Footer'
+import Footer from "./components/Footer/Footer";
 // import Contact from './components/Contact'
 // import Ingredients from './components/Ingredients'
 
@@ -13,6 +13,7 @@ function App() {
       <Header />
       <Hero />
       <CakeList />
+      <Footer/>
     </div>
   );
 }
