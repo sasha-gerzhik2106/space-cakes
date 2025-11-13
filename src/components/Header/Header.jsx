@@ -1,15 +1,17 @@
-import "./../styles-css/header.css";
-import MenuButton from "./Bmenu/MenuButton";
-import { menuItems } from "./Bmenu/menu-items";
-import { useState } from "react";
+import { Link } from "react-router";
+import MenuButton from "../Bmenu/MenuButton";
+
+import routes from "~/constants/routes";
+
+import "./Header.css";
+
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="header">
       <div className="header-container">
-        <a href="#" className="brand-title">
+        <Link to={routes.home} className="brand-title">
           Space Cakes
-        </a>
+        </Link>
         <ul className="nav-menu">
           <li className="nav-li">Каталог</li>
           <li className="nav-li">Контакти</li>
@@ -17,7 +19,6 @@ export default function Header() {
         </ul>
 
         <MenuButton className="border-menu" id="border-button">
-          {" "}
           🍰
         </MenuButton>
       </div>

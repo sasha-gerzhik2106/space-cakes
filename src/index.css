@@ -1,29 +1,29 @@
-/* Сброс отступов для всех элементов */
-:root{
-  --color-pink: #FEF7FF;
-  --color-purple:#9B87CE;
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+:root {
+  --color-pink: #fef7ff;
+  --color-purple: #9b87ce;
+  --desktop: 768px;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 /* Сброс отступов body и html */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-/* Для App компонента */
-.App {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+body {
+  background-color: var(--color-pink);
 }

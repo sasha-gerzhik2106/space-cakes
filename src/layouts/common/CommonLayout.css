@@ -1,0 +1,5 @@
+.common-layout {
+  margin: var(--header-height) auto 0;
+  padding-bottom: 30px;
+  min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+}
