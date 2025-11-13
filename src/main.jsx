@@ -6,7 +6,7 @@ import AppRoutes from "./AppRoutes";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/space-cakes">
       <AppRoutes />
     </BrowserRouter>
   </StrictMode>,
