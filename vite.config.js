@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/space-cakes/",
   build: {
     outDir: "dist",
     assetsDir: "assets",
