@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./MenuButton.css";
 import { menuItems } from "./menu-items";
 import { useState, useEffect } from "react";
@@ -34,7 +35,11 @@ export default function MenuButton({ onClick, className, children }) {
               </button>
               <ul className="menu-list">
                 {menuItems.map((item) => (
-                  <li key={item.title}>{item.title}</li>
+                  <li key={item.title}>
+                    <Link to={item.pathname}>
+                    {item.title}
+                    </Link>
+                    </li>
                 ))}
               </ul>
             </div>

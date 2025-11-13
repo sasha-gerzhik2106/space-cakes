@@ -1,5 +1,7 @@
+import routes from "../../constants/routes";
+
 export const menuItems = [
-    {title: 'Каталог'},
-    { title: 'Інгрідієнти'},
-    {title:'Контакти'}
+    {title: 'Каталог', pathname: routes.cakes},
+    { title: 'Інгрідієнти', pathname: routes.ingridients},
+    {title:'Контакти', pathname: routes.contacts}
 ]
