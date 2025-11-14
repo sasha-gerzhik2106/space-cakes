@@ -2,7 +2,7 @@ const routes = {
   home: "/",
   cakes: "/cakes",
   contacts: "/contacts",
-  ingridients:"",
+  ingridients:"/ingridients",
 };
 
 export default routes;

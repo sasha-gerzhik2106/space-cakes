@@ -5,13 +5,13 @@
 .footer {
   height: var(--footer-height);
   background-color: var(--color-purple);
-  color: #ffffff; /* Белый текст */
-  padding: 20px 10px; /* Внутренние отступы */
-  display: flex; /* Горизонтальное расположение элементов */
-  justify-content: center; /* Центровка по горизонтали */
-  align-items: center; /* Центровка по вертикали */
-  gap: 20px; /* Расстояние между ссылками */
-  flex-wrap: wrap; /* Перенос на мобильных */
+  color: #ffffff;
+  padding: 20px 10px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
   text-align: center;
   font-family: "Inter", sans-serif;
 }

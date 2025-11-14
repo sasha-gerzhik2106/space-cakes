@@ -15,7 +15,7 @@ export default function Header() {
         <ul className="nav-menu">
           {menuItems.map((item) => (
                             <li key={item.title}>
-                              <Link to={item.pathname}>
+                              <Link to={item.pathname} >
                               {item.title}
                               </Link>
                               </li>

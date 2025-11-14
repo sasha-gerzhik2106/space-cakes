@@ -16,7 +16,7 @@ export default function MenuButton({ onClick, className, children }) {
       setMenuOpen(false);
     }
   }
-
+  
   return (
     <>
       <button onClick={handleClick} className={className}>
@@ -36,7 +36,7 @@ export default function MenuButton({ onClick, className, children }) {
               <ul className="menu-list">
                 {menuItems.map((item) => (
                   <li key={item.title}>
-                    <Link to={item.pathname}>
+                    <Link to={item.pathname} onClick={() => setMenuOpen(false)}>
                     {item.title}
                     </Link>
                     </li>
