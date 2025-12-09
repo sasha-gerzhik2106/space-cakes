@@ -27,6 +27,12 @@ const checkStaticFolder = () => {
 };
 checkStaticFolder();
 
+const newResponse = (body: BodyInit, options: ResponseInit = {}) =>
+  new Response(body, {
+    ...options,
+    headers: { ...options.headers, "Access-Control-Allow-Origin": "*" },
+  });
+
 interface Cake {
   id: number;
   name: string;
@@ -57,10 +63,10 @@ const server = Bun.serve({
           .formData()
           .then((body: FormData) => {
             if (!body.has("name") || typeof body.get("name") !== "string") {
-              return new Response("Name is a required field", { status: 400 });
+              return newResponse("Name is a required field", { status: 400 });
             }
             if (!body.has("price") || Number.isNaN(body.get("price"))) {
-              return new Response("Price is a required field", { status: 400 });
+              return newResponse("Price is a required field", { status: 400 });
             }
             if (body.has("image")) {
               const image = body.get("image") as File;
@@ -75,11 +81,11 @@ const server = Bun.serve({
                 [...body.entries()].map(([key, value]) => ["$" + key, value]),
               ),
             );
-            return new Response("Created");
+            return newResponse("Created");
           })
           .catch((e) => {
             console.log(e);
-            return new Response(
+            return newResponse(
               "Invalid body format. Expected object with fields: name, description and price",
               { status: 400 },
             );
@@ -90,7 +96,7 @@ const server = Bun.serve({
       GET: (req) => {
         const cake = getCakeQuery.get(req.params.id);
         if (!cake) {
-          return new Response("Not found", { status: 404 });
+          return newResponse("Not found", { status: 404 });
         }
         return Response.json(cakeResolver(cake, req));
       },
@@ -98,10 +104,10 @@ const server = Bun.serve({
         const cakeId = req.params.id;
         const cake = getCakeQuery.get(cakeId);
         if (!cake) {
-          return new Response("Not found", { status: 404 });
+          return newResponse("Not found", { status: 404 });
         }
         deleteCakeQuery.run(cakeId);
-        return new Response("Deleted");
+        return newResponse("Deleted");
       },
     },
     "/static/*": async (req: Request) => {
@@ -110,9 +116,9 @@ const server = Bun.serve({
       const bunFile = Bun.file(path.join(serverStaticFolderPath, filePath));
       const fileExists = await bunFile.exists();
       if (!fileExists) {
-        return new Response("Not found", { status: 404 });
+        return newResponse("Not found", { status: 404 });
       }
-      return new Response(bunFile);
+      return newResponse(bunFile);
     },
   },
 });
