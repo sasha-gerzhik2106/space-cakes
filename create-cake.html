@@ -1,0 +1,58 @@
+<html>
+  <body>
+    <form id="form">
+      <div>
+        <label>
+          <span>Cake name:</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter cake name"
+            required
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Cake description:</span>
+          <textarea
+            name="description"
+            placeholder="Enter cake description"
+          ></textarea>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Cake price:</span>
+          <input type="number" name="price" placeholder="Enter cake price" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Image:</span>
+          <input type="file" accept="image/*" name="image" required />
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = window.form;
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        fetch("http://134.209.226.244:3000/api/cakes", {
+          method: "POST",
+          body: formData,
+        })
+          .then(() => {
+            alert("Cake created");
+            window.location.reload();
+          })
+          .catch((e) => {
+            console.log(e);
+            alert("An error occurred, check the console for details");
+          });
+      });
+    </script>
+  </body>
+</html>

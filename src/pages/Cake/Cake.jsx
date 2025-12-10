@@ -2,14 +2,14 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function CakePage() {
-  const { id } = useParams();         
+  const { id } = useParams();
   const [cake, setCake] = useState(null);
 
   useEffect(() => {
     async function loadCake() {
-      const res = await fetch(`/api/cakes/${id}`);
+      const res = await fetch(`http://134.209.226.244:3000/api/cakes/${id}`);
       const data = await res.json();
-      setCake(data);                                
+      setCake(data);
     }
 
     loadCake();
